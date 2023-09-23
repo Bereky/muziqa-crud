@@ -71,7 +71,7 @@ const LeftSidebar = () => {
 
 const RighSidebar = () => {
   return (
-    <div className="w-64 h-full bg-zinc-800 text-zinc-200 flex justify-center items-center p-3 absolute right-0">
+    <div className="w-64 h-auto bg-zinc-800 text-zinc-200 flex justify-center items-center p-3 absolute right-0 rounded-b-lg">
       <div className="w-full h-full bg-slate-00 flex flex-col justify-start items-center p-2">
         <div className="w-full h-24 flex justify-center items-center py-2 ">
           <div className="w-48 h-full rounded-md flex flex-row justify-center items-center space-x-2 px-3  bg-sky-600">
@@ -133,6 +133,16 @@ const Table = () => {
           <td className="py-2 px-4 ">Michael Jackson</td>
           <td className="py-2 px-4 ">-</td>
           <td className="py-2 px-4 ">Pop</td>
+          <td className="py-2 px-4 ">
+            <div className="flex justify-start items-center flex-row space-x-4">
+              <button className="w-8 h-8 outline outline-slate-500 rounded-md hover:bg-slate-500">
+                <i className="fas fa-pen-to-square text-sm text-sky-400"></i>
+              </button>
+              <button className="w-8 h-8 outline outline-slate-500 rounded-md text-center hover:bg-slate-500">
+                <i className="fas fa-trash text-sm text-red-500"></i>
+              </button>
+            </div>
+          </td>
         </tr>
 
         <tr>
