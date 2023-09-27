@@ -12,7 +12,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Outlet />}>
           <Route path="" element={<MainLayout />} />
-          <Route path="artists" element={<MainLayout />} />
+          <Route path="artists" element={<></>} />
+          <Route path="albums" element={<></>} />
+          <Route path="genres" element={<></>} />
         </Route>
       </Routes>
     </Router>
