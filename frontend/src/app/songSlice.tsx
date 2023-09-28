@@ -21,8 +21,24 @@ export const songSlice = createSlice({
       state.songs = action.payload;
       state.status.isLoading = false;
       state.status.isSuccess = true;
+      console.log(action.payload);
     },
     fetchSongFailure: (state) => {
+      state.songs = [];
+      state.status.isError = true;
+      state.status.isSuccess = false;
+    },
+
+    addSongPending: (state) => {
+      state.status.isLoading = true;
+    },
+    addSongSuccess: (state) => {
+      //state.songs = action.payload;
+      state.status.isLoading = false;
+      state.status.isSuccess = true;
+      // console.log(action.payload);
+    },
+    addSongFailure: (state) => {
       state.songs = [];
       state.status.isError = true;
       state.status.isSuccess = false;
@@ -30,6 +46,12 @@ export const songSlice = createSlice({
   },
 });
 
-export const { fetchSongPending, fetchSongSuccess, fetchSongFailure } =
-  songSlice.actions;
+export const {
+  fetchSongPending,
+  fetchSongSuccess,
+  fetchSongFailure,
+  addSongPending,
+  addSongSuccess,
+  addSongFailure,
+} = songSlice.actions;
 export default songSlice.reducer;
