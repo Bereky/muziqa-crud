@@ -1,11 +1,14 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { PayloadAction } from "@reduxjs/toolkit";
-import Api from "./apis";
+import api from "./apis";
 
 import {
   fetchSongSuccess,
   fetchSongPending,
   fetchSongFailure,
+  addSongPending,
+  addSongSuccess,
+  addSongFailure,
 } from "./songSlice";
 
 interface Song {
@@ -20,17 +23,38 @@ interface FetchSongsResponse {
   data: Song[];
 }
 
+interface AddSongsResponse {
+  data: Song[];
+}
+
+interface AddSongAction {
+  payload: Song;
+}
+
 function* fetchSongs() {
   try {
-    const response: FetchSongsResponse = yield call(Api.getSongs);
+    const response: FetchSongsResponse = yield call(api.getSongs);
     yield put(fetchSongSuccess(response.data));
   } catch (error) {
     yield put(fetchSongFailure());
   }
 }
 
+function* addSong(action: { type: string; payload: Song }) {
+  try {
+    const response: AddSongsResponse = yield call(
+      api.addNewSong,
+      action.payload
+    );
+    yield put(addSongSuccess(response.data));
+  } catch (error) {
+    yield put(addSongFailure());
+  }
+}
+
 function* songSaga() {
   yield takeEvery("song/fetchSongPending", fetchSongs);
+  yield takeEvery("song/addSongPending", addSong);
 }
 
 export default songSaga;
