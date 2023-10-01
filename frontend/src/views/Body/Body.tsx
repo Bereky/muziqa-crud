@@ -1,10 +1,18 @@
 import { Outlet } from "react-router-dom";
 import LeftSidebar from "../Sidebar/LeftSidebar";
 import RighSidebar from "../Sidebar/RightSidebar";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const Body = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: "song/fetchSongPending" });
+  }, [dispatch]);
+
   return (
-    <div className="w-full h-screen bg-zinc-900 flex flex-row justify-start items-start absolute z-10 top-0 pt-20">
+    <div className="w-full h-screen flex flex-row justify-start items-start absolute top-0 pt-20">
       <LeftSidebar />
       <div className="w-auto h-full  flex justify-start items-start pt-8 p-4">
         <Outlet />
