@@ -11,6 +11,6 @@ const {
 router.post("/add-song", addSong);
 router.get("/get-song", getSong);
 router.put("/update-song", updateSong);
-router.delete("/delete-song", deleteSong);
+router.delete("/delete-song/:_id", deleteSong);
 
 module.exports = router;
