@@ -1,14 +1,6 @@
-import { useDispatch } from "react-redux";
-import { useState } from "react";
 import Button from "./Button";
 
 const Header = () => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch({ type: "song/addSongPending" });
-  };
-
   return (
     <div className="w-full h-20 bg-zinc-800 text-sky-600 flex flex-row justify-start items-center absolute z-20 right-0 border-b-2 border-zinc-700">
       <div className="w-64 h-full bg-slate-00 flex justify-start items-center ml-3 px-5">
