@@ -19,7 +19,7 @@ const MainLayout = () => {
     }
 
     if (isSuccess) {
-      toast.success("Request Success!", {
+      toast.success("Completed Successfully!", {
         position: "bottom-right",
         autoClose: 3000,
         hideProgressBar: false,
