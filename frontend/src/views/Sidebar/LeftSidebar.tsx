@@ -7,7 +7,7 @@ const LeftSidebar = () => {
     <div className="w-64 h-full bg-zinc-800 text-sky-600 flex justify-center items-center p-3 pt-5">
       <div className="w-full h-full flex flex-col justify-start items-center p-2">
         <div className="w-full h-16 flex justify-center items-center py-2">
-          <Link to={""} className="w-48 h-full">
+          <Link to={""} className="w-48 h-12">
             <button
               className={`w-48 h-full outline outline-sky-600 rounded-md ${
                 location.pathname === "/"
@@ -20,7 +20,7 @@ const LeftSidebar = () => {
           </Link>
         </div>
         <div className="w-full h-16 flex justify-center items-center py-2">
-          <Link to={"artists"} className="w-48 h-full">
+          <Link to={"artists"} className="w-48 h-12">
             <button
               className={`w-48 h-full outline outline-sky-600 rounded-md ${
                 location.pathname === "/artists"
@@ -33,7 +33,7 @@ const LeftSidebar = () => {
           </Link>
         </div>
         <div className="w-full h-16 flex justify-center items-center py-2">
-          <Link to={"albums"} className="w-48 h-full">
+          <Link to={"albums"} className="w-48 h-12">
             <button
               className={`w-48 h-full outline outline-sky-600 rounded-md ${
                 location.pathname === "/albums"
@@ -46,7 +46,7 @@ const LeftSidebar = () => {
           </Link>
         </div>
         <div className="w-full h-16 flex justify-center items-center py-2">
-          <Link to={"genres"} className="w-48 h-full">
+          <Link to={"genres"} className="w-48 h-12">
             <button
               className={`w-48 h-full outline outline-sky-600 rounded-md ${
                 location.pathname === "/genres"
