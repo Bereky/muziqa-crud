@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Song = require("../models/song");
+const { filterSongs } = require("../utils/filterSongs");
 
 //add song
 const addSong = asyncHandler(async (req, res) => {
@@ -16,7 +17,9 @@ const addSong = asyncHandler(async (req, res) => {
     const songs = await Song.find();
 
     if (songs) {
-      res.status(201).json(songs);
+      const { artists, albums, genres } = filterSongs(songs);
+
+      res.status(201).json({ songs, artists, albums, genres });
     } else {
       res.status(500).json("Error occured while adding song");
     }
@@ -30,54 +33,7 @@ const getSong = asyncHandler(async (req, res) => {
   const songs = await Song.find();
 
   if (songs) {
-    const allSongs = await Song.find();
-
-    const artists = [];
-    allSongs.forEach((song) => {
-      const { artist, album } = song;
-      let artistEntry = artists.find((entry) => entry.artist === artist);
-
-      if (!artistEntry) {
-        artistEntry = { artist, songs: [], albums: [] };
-        artists.push(artistEntry);
-      }
-
-      artistEntry.songs.push(song);
-
-      if (!artistEntry.albums.includes(album)) {
-        artistEntry.albums.push(album);
-      }
-    });
-
-    // Categorize by albums
-    const albums = [];
-    allSongs.forEach((song) => {
-      const { artist, album } = song;
-
-      let albumEntry = albums.find((entry) => entry.album === album);
-
-      if (!albumEntry) {
-        albumEntry = { album, artist, songs: [] };
-        albums.push(albumEntry);
-      }
-
-      albumEntry.songs.push(song);
-    });
-
-    // Categorize by genres
-    const genres = [];
-    allSongs.forEach((song) => {
-      const { genre, title, album, artist } = song;
-
-      let genreEntry = genres.find((entry) => entry.genre === genre);
-
-      if (!genreEntry) {
-        genreEntry = { genre, songs: [] };
-        genres.push(genreEntry);
-      }
-
-      genreEntry.songs.push({ title, album, artist });
-    });
+    const { artists, albums, genres } = filterSongs(songs);
 
     res.status(201).json({ songs, artists, albums, genres });
   } else {
@@ -107,7 +63,9 @@ const updateSong = asyncHandler(async (req, res) => {
     const songs = await Song.find();
 
     if (songs) {
-      res.status(201).json(songs);
+      const { artists, albums, genres } = filterSongs(songs);
+
+      res.status(201).json({ songs, artists, albums, genres });
     } else {
       res.status(500).json("Error occured while updating song");
     }
@@ -126,7 +84,9 @@ const deleteSong = asyncHandler(async (req, res) => {
     const songs = await Song.find();
 
     if (songs) {
-      res.status(201).json(songs);
+      const { artists, albums, genres } = filterSongs(songs);
+
+      res.status(201).json({ songs, artists, albums, genres });
     } else {
       res.status(500).json("Error occured while updating song");
     }
