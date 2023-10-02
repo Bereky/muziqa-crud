@@ -82,6 +82,13 @@ const AddSongModal = ({ message, onClickCB }: ChildProps) => {
                         className="bg-zinc-800 border border-sky-500 text-sky-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                       >
                         <option value="jazz"> Jazz </option>
+                        <option value="pop"> Pop</option>
+                        <option value="blues"> Blues</option>
+                        <option value="reggae"> Reggae</option>
+                        <option value="indie"> Indie</option>
+                        <option value="soul"> Soul </option>
+                        <option value="country"> Country</option>
+                        <option value="rock"> Rock </option>
                         <option value="house">House</option>
                       </select>
                     </div>
