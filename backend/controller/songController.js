@@ -18,10 +18,10 @@ const addSong = asyncHandler(async (req, res) => {
     if (songs) {
       res.status(201).json(songs);
     } else {
-      res.status(401).json("Error occured while adding song");
+      res.status(500).json("Error occured while adding song");
     }
   } else {
-    res.status(401).json("Error occured while adding song");
+    res.status(500).json("Error occured while adding song");
   }
 });
 
@@ -81,7 +81,7 @@ const getSong = asyncHandler(async (req, res) => {
 
     res.status(201).json({ songs, artists, albums, genres });
   } else {
-    res.status(401).json("Error occured while getting song");
+    res.status(500).json("Error occured while getting song");
   }
 });
 
@@ -109,10 +109,10 @@ const updateSong = asyncHandler(async (req, res) => {
     if (songs) {
       res.status(201).json(songs);
     } else {
-      res.status(401).json("Error occured while updating song");
+      res.status(500).json("Error occured while updating song");
     }
   } else {
-    res.status(401).json("Error occured while updating song");
+    res.status(500).json("Error occured while updating song");
   }
 });
 
@@ -128,7 +128,7 @@ const deleteSong = asyncHandler(async (req, res) => {
     if (songs) {
       res.status(201).json(songs);
     } else {
-      res.status(401).json("Error occured while updating song");
+      res.status(500).json("Error occured while updating song");
     }
   } else {
     res.status(500).json("Error occured while deleting song");
