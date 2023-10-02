@@ -25,6 +25,7 @@ const UpdateSongModal = ({ message, onClickCB }: ChildProps) => {
     };
 
     dispatch({ type: "song/updateSongPending", payload: updatedSong });
+    onClickCB();
     reset();
   };
 
