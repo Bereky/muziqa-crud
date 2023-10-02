@@ -1,7 +1,7 @@
 import axios from "axios";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-const API_URL = "http://localhost:8400";
+const API_URL = process.env.REACT_APP_SERVER_URL;
 
 const getSongs = async () => {
   const response = await axios.get(API_URL + "/api/get-song");
