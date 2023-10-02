@@ -16,7 +16,7 @@ const Table = () => {
       <thead>
         <tr>
           <th className="py-1 px-1 w-5 text-start">#</th>
-          <th className="py-2 px-4 w-56 text-start">Name</th>
+          <th className="py-2 px-4 w-56 text-start">Genre</th>
           <th className="py-2 px-4 w-48 text-start"># of Songs</th>
         </tr>
       </thead>
