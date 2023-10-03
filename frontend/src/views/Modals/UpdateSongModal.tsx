@@ -88,7 +88,7 @@ const UpdateSongModal = ({ message, onClickCB }: ChildProps) => {
                         type="text"
                         id="default-input"
                         className="bg-zinc-800 border border-sky-500 text-zinc-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                        defaultValue={songForAction[0].artist}
+                        defaultValue={songForAction[0].album}
                         {...register("album", { required: true })}
                       />
                     </div>
