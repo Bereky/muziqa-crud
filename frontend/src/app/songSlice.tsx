@@ -8,11 +8,21 @@ interface Song {
   album: string;
 }
 
+interface Songs {
+  songs: Song[];
+  artists: Artist[];
+  albums: Album[];
+  genres: Genre[];
+}
+
+// Get songs from localStorage
+const songs: Songs = JSON.parse(localStorage.getItem("songs") || "[]");
+
 const initialState = {
-  songs: [],
-  artists: [],
-  albums: [],
-  genres: [],
+  songs: songs ? songs.songs : [],
+  artists: songs ? songs.artists : [],
+  albums: songs ? songs.albums : [],
+  genres: songs ? songs.songs : [],
   songForAction: {},
   status: {
     isError: false,
@@ -40,13 +50,15 @@ export const songSlice = createSlice({
       state.status.isLoading = true;
     },
     fetchSongSuccess: (state, action) => {
-      state.status.isLoading = false;
-      state.status.isError = false;
-      state.status.isSuccess = false;
       state.songs = action.payload.songs;
       state.artists = action.payload.artists;
       state.albums = action.payload.albums;
       state.genres = action.payload.genres;
+      state.status.isLoading = false;
+      state.status.isError = false;
+      state.status.isSuccess = false;
+      console.log(songs);
+
       console.log(action.payload);
     },
     fetchSongFailure: (state) => {
@@ -58,13 +70,13 @@ export const songSlice = createSlice({
       state.status.isLoading = true;
     },
     addSongSuccess: (state, action) => {
-      state.status.isLoading = false;
-      state.status.isError = false;
-      state.status.isSuccess = true;
       state.songs = action.payload.songs;
       state.artists = action.payload.artists;
       state.albums = action.payload.albums;
       state.genres = action.payload.genres;
+      state.status.isLoading = false;
+      state.status.isError = false;
+      state.status.isSuccess = true;
     },
     addSongFailure: (state) => {
       state.status.isError = true;
@@ -74,13 +86,15 @@ export const songSlice = createSlice({
       state.status.isLoading = true;
     },
     updateSongSuccess: (state, action) => {
-      state.status.isLoading = false;
-      state.status.isError = false;
-      state.status.isSuccess = true;
       state.songs = action.payload.songs;
       state.artists = action.payload.artists;
       state.albums = action.payload.albums;
       state.genres = action.payload.genres;
+      state.status.isLoading = false;
+      state.status.isError = false;
+      state.status.isSuccess = true;
+
+      console.log(action.payload);
     },
     updateSongFailure: (state) => {
       state.status.isError = true;
@@ -90,13 +104,13 @@ export const songSlice = createSlice({
       state.status.isLoading = true;
     },
     deleteSongSuccess: (state, action) => {
-      state.status.isLoading = false;
-      state.status.isError = false;
-      state.status.isSuccess = true;
       state.songs = action.payload.songs;
       state.artists = action.payload.artists;
       state.albums = action.payload.albums;
       state.genres = action.payload.genres;
+      state.status.isLoading = false;
+      state.status.isError = false;
+      state.status.isSuccess = true;
     },
     deleteSongFailure: (state) => {
       state.status.isError = true;
