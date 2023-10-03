@@ -9,7 +9,7 @@ const LeftSidebar = () => {
         <div className="w-full h-16 flex justify-center items-center py-2">
           <Link to={""} className="w-48 h-12">
             <button
-              className={`w-48 h-full outline outline-sky-600 rounded-md ${
+              className={`w-48 h-full outline outline-sky-600 hover:outline-sky-500 hover:bg-sky-500 hover:text-zinc-200 duration-300 rounded-md ${
                 location.pathname === "/"
                   ? "bg-sky-600 text-zinc-200"
                   : "bg-none text-sky-600"
@@ -22,7 +22,7 @@ const LeftSidebar = () => {
         <div className="w-full h-16 flex justify-center items-center py-2">
           <Link to={"artists"} className="w-48 h-12">
             <button
-              className={`w-48 h-full outline outline-sky-600 rounded-md ${
+              className={`w-48 h-full outline outline-sky-600 hover:outline-sky-500 hover:bg-sky-500 hover:text-zinc-200 duration-300 rounded-md ${
                 location.pathname === "/artists"
                   ? "bg-sky-600 text-zinc-200"
                   : "bg-none text-sky-600 "
@@ -35,7 +35,7 @@ const LeftSidebar = () => {
         <div className="w-full h-16 flex justify-center items-center py-2">
           <Link to={"albums"} className="w-48 h-12">
             <button
-              className={`w-48 h-full outline outline-sky-600 rounded-md ${
+              className={`w-48 h-full outline outline-sky-600 hover:outline-sky-500 hover:bg-sky-500 hover:text-zinc-200 duration-300 rounded-md ${
                 location.pathname === "/albums"
                   ? "bg-sky-600 text-zinc-200"
                   : "bg-none text-sky-600 "
@@ -48,7 +48,7 @@ const LeftSidebar = () => {
         <div className="w-full h-16 flex justify-center items-center py-2">
           <Link to={"genres"} className="w-48 h-12">
             <button
-              className={`w-48 h-full outline outline-sky-600 rounded-md ${
+              className={`w-48 h-full outline outline-sky-600 hover:outline-sky-500 hover:bg-sky-500 hover:text-zinc-200 duration-300 rounded-md ${
                 location.pathname === "/genres"
                   ? "bg-sky-600 text-zinc-200"
                   : "bg-none text-sky-600 "

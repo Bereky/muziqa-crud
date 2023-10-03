@@ -13,7 +13,7 @@ const Button = () => {
     <div className="w-52 h-full bg-slate-00 flex justify-center items-center absolute right-0 p-5 mr-3">
       <button
         onClick={() => setShowModal(true)}
-        className="w-48 h-full outline outline-sky-600 rounded-md"
+        className="w-48 h-full outline outline-sky-600 hover:outline-sky-500 hover:bg-sky-500 hover:text-zinc-200 duration-300 rounded-md"
       >
         Add Song
       </button>
