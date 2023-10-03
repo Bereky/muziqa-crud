@@ -22,7 +22,7 @@ const RighSidebar = () => {
             <h1 className="text-4xl font-bold">{artists.length}</h1>
             <h2 className="text-lg text-end">Artists</h2>
 
-            <i className="fas fa-music text-3xl pl-5"></i>
+            <i className="fas fa-user text-3xl pl-5"></i>
           </div>
         </div>
 
@@ -31,7 +31,7 @@ const RighSidebar = () => {
             <h1 className="text-4xl font-bold">{albums.length}</h1>
             <h2 className="text-lg text-end">Albums</h2>
 
-            <i className="fas fa-music text-3xl pl-5"></i>
+            <i className="fas fa-compact-disc text-3xl pl-5"></i>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const RighSidebar = () => {
             <h1 className="text-4xl font-bold">{genres.length}</h1>
             <h2 className="text-lg text-end">Genres</h2>
 
-            <i className="fas fa-music text-3xl pl-5"></i>
+            <i className="fas fa-layer-group text-3xl pl-5"></i>
           </div>
         </div>
       </div>
